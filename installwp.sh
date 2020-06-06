@@ -31,20 +31,22 @@ set -eu
 # Set the bin utility program
 WP="/usr/bin/wp" # Path of wp-cli
 
-# Set default variables
+# Set config file
+CONFIG_FILE="$HOME/.installwp.conf"
+
+# Set default protocol
+HTTP="http"
+
+# Set default variables [You can replace with command line or config file]
 HTDOCS="/var/www/htdocs" # Path of docroot
 URL="localhost" # Url
-
 LOCALE="it_IT" # Set language
-
 admin_user="admin" # Admin username
 admin_password="password" # Admin password
-admin_email="conraid@example.local" # Admin email
-
+admin_email="username@example.local" # Admin email
 dbuser="dbusername" # Database username
 dbpass="dbpassword" # Database password
 
-HTTP="http"
 
 ### FUNCTIONS ###
 
@@ -252,18 +254,21 @@ if [ -z "${TITLE:-""}" ]; then
 	TITLE="$NOMESITO"
 fi
 
+# Read config file
+if [ -e "${CONFIG_FILE:-""}" ]; then
+  . "$CONFIG_FILE";
+fi
+
+
 if [ -d "$HTDOCS/$NOMESITO" ]; then
   echo "$HTDOCS/$NOMESITO exist"
   exit 1
-else
-  mkdir "$HTDOCS/$NOMESITO"
 fi
 
-cd "$HTDOCS/$NOMESITO"
+echo mkdir "$HTDOCS/$NOMESITO"
+echo cd "$HTDOCS/$NOMESITO"
 
-$WP core download --locale=$LOCALE
-$WP config create --dbname="$dbname" --dbuser="$dbuser" --dbpass="$dbpass"
-$WP db create
-$WP core install --url="$HTTP://$URL/$NOMESITO" --title="\"$TITLE\"" --admin_user="$admin_user" --admin_password="$admin_password" --admin_email="$admin_email"
-
-
+echo $WP core download --locale=$LOCALE
+echo $WP config create --dbname="$dbname" --dbuser="$dbuser" --dbpass="$dbpass"
+echo $WP db create
+echo $WP core install --url="$HTTP://$URL/$NOMESITO" --title="\"$TITLE\"" --admin_user="$admin_user" --admin_password="$admin_password" --admin_email="$admin_email"
