@@ -10,7 +10,7 @@ This script install Wordpress in localhost with wp-cli.
 
   Usage:
 
-    installwp.sh [-n|--name <name>] [-u|--url <url>] [-h|--help] [-V|--version] [-vv|--verbose] [--debug]
+    installwp.sh [-n|--name <name>] [-u|--url <url>] [-h|--help] [-V|--version] [--debug]
 
   Example:
 
