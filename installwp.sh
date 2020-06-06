@@ -83,7 +83,7 @@ help() {
 cat << EOF
 
 Usage:
-  $(basename "$0") [-n|--name <name>] [-u|--url <url>] [-h|--help] [-V|--version] [-vv|--verbose] [--debug]
+  $(basename "$0") [-n|--name <name>] [-u|--url <url>] [-h|--help] [-V|--version] [--debug]
 
 
 Example:
