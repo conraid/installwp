@@ -2,36 +2,64 @@
 
 Install Wordpress site in localhost with WP-CLI
 
-# Usage
+## Description
 
-Usage:
-  installwp.sh [-n|--name <name>] [-u|--url <url>] [-h|--help] [-V|--version] [-vv|--verbose] [--debug]
+This script install Wordpress in localhost with wp-cli.
 
-Example:
-  installwp.sh -n prova -u http://example.local
+## Usage
 
-Options:
- -n|--name <string>          Set the NAME [directory, name site, etc...]
+  Usage:
 
- -u|--url <url>              Set the local URL (ex. http://localhost/foobar/ ) or IP.
+    installwp.sh [-n|--name <name>] [-u|--url <url>] [-h|--help] [-V|--version] [-vv|--verbose] [--debug]
 
- -t|--title <string>         Set the Wordpress site title
+  Example:
 
- --ssl                       Set https
+    installwp.sh -n prova -u http://example.local
 
- --htdocs <path>             Set the htdocs PATH (ex. /var/www/htdocs ).
+  Options:
 
- --dbname <string>           Set database name
- --dbuser <string>           Set database user
- --dbpass <string>           Set database password
+    -n|--name <string>          Set the NAME [directory, name site, etc...]
 
- --admin_user <string>       Set admin username
- --admin_password <string>   Set admin password
- --admin_email <string>      Set admin email
+    -u|--url <url>              Set the local URL (ex. http://localhost/foobar/ ) or IP.
 
- --debug                     Set bash to debug mode (-x)
+    -t|--title <string>         Set the Wordpress site title
 
- -v|--version                Print version.
+    --ssl                       Set https
 
- -h|--help                   Print this help and exit.
+    --htdocs <path>             Set the htdocs PATH (ex. /var/www/htdocs ).
 
+    --dbname <string>           Set database name
+    --dbuser <string>           Set database user
+    --dbpass <string>           Set database password
+
+    --admin_user <string>       Set admin username
+    --admin_password <string>   Set admin password
+    --admin_email <string>      Set admin email
+
+    --debug                     Set bash to debug mode (-x)
+
+    -v|--version                Print version.
+
+    -h|--help                   Print this help and exit.
+
+## Installation
+
+Simple copy file in $PATH and
+
+    $ chmod +x installwp.sh
+
+## Requirement
+
+This script requires WP-CLI (https://wp-cli.org/)
+
+## Warnings
+
+**THIS IS ONLY A TESTING SCRIPT** to install Wordpress in localhost
+
+It was written quickly, so it has errors and *ugliness* of course.
+
+## Note
+
+If you have advice and suggestions to give, you are welcome.
+
+I'm sorry for my bad english
